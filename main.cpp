@@ -6,9 +6,9 @@ using namespace std;
 using namespace Eigen;
 
 /* Funzione che calcola la fattorizzazione PA = LU della matrice A */ 
-VectorXd palu_decomposition(MatrixXd A, VectorXd b)
+Vector2d palu_decomposition(Matrix2d A, Vector2d b)
 {
-    FullPivLU<MatrixXd> lu(A);
+    FullPivLU<Matrix2d> lu(A);
     return lu.solve(b);
 }
 
@@ -19,9 +19,9 @@ VectorXd palu_decomposition(MatrixXd A, VectorXd b)
     Se la matrice fosse stata più grande FullPivHouseholderQR avrebbe appesantito troppo il 
     programma
 */ 
-VectorXd qr_decomposition(MatrixXd A, VectorXd b)
+Vector2d qr_decomposition(Matrix2d A, Vector2d b)
 {
-    FullPivHouseholderQR<MatrixXd> qr(A);
+    FullPivHouseholderQR<Matrix2d> qr(A); //HouseholderQR<Matrix2d> qr(A);
     return qr.solve(b);
 }
 
@@ -29,7 +29,7 @@ VectorXd qr_decomposition(MatrixXd A, VectorXd b)
 double relative_error(Vector2d solution)
 {
     Vector2d real_solution;
-    real_solution << -1.0e+00, -1.0e+00;
+    real_solution << -1.0, -1.0;
     return (real_solution-solution).norm()/real_solution.norm();
 }
 
