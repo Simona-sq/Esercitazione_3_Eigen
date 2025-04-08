@@ -13,7 +13,7 @@ Vector2d palu_decomposition(Matrix2d A, Vector2d b)
 }
 
 /*  
-    Funzione che calcola la fattorizzazione A = QR della matrice A.alignas
+    Funzione che calcola la fattorizzazione A = QR della matrice A.
     La matrice A è di piccole dimensionioni, quindi ho usato FullPivHouseholderQR così da 
     ottenere un risultato più accurato. 
     Se la matrice fosse stata più grande FullPivHouseholderQR avrebbe appesantito troppo il 
