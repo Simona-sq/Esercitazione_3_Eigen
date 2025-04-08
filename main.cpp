@@ -34,7 +34,7 @@ double relative_error(Vector2d solution)
 }
 
 /* Funzione che calcola la soluzione dei sistemi e stampa i risultati */
-void print_systems(const Matrix2d& A, const Vector2d& b) // Passaggio per riferimento costante
+void solve_print_systems(const Matrix2d& A, const Vector2d& b) // Passaggio per riferimento costante
 {
     cout << "\nSe la matrice A è:\nA = "<< scientific << setprecision(15)<< A;
     cout << "\n\ne il vettore b è:\n" << "b = " << b << endl;
@@ -74,9 +74,9 @@ int main()
 
     b3 << -6.400391328043042e-10, 4.266924591433963e-10;
 
-    print_systems(M1, b1);
-    print_systems(M2, b2);
-    print_systems(M3, b3);
+    solve_print_systems(M1, b1);
+    solve_print_systems(M2, b2);
+    solve_print_systems(M3, b3);
 
     return 0;
 }
